@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #**** STEP BY STEP ****#
 #* DATA WRANGLING *#
 #* Local: R_Analysis/Post_Doc >> /script  ||  /data/data_input
