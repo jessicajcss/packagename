@@ -26,6 +26,25 @@ library(openair)
 library(dplyr)
 library(zoo)
 library(httr)
+library(usethis)
+
+
+#  --------------------------------------------------------------------------------------------------------
+#                                              CHECKING CONFLICTED FUNCTIONS
+#  --------------------------------------------------------------------------------------------------------
+
+#devtools::install_github("r-lib/conflicted")
+#library(conflicted)
+
+#conflict_scout(
+ # source("./scripts/01-AQI_calculation_thermo_data.R")
+#)
+#conflicts_prefer(dplyr::filter)
+#conflicts_prefer(lubridate::hour)
+
+#source("R/job.R")
+
+
 
 #  --------------------------------------------------------------------------------------------------------
 #                                              READING THE FILES

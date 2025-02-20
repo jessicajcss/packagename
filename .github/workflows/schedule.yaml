@@ -38,6 +38,7 @@ jobs:
             any::dplyr
             any::zoo
             any::httr
+            any::usethis
 
       - name: Execute Script
         run: |
