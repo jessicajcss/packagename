@@ -32,7 +32,6 @@ library(openair)
 library(openairmaps)
 library(dplyr)
 library(zoo)
-library(plotly)
 library(httr)
 
 #  --------------------------------------------------------------------------------------------------------
