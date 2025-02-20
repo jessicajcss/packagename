@@ -287,8 +287,8 @@ air_quality_data <- dataaggfinal %>%
          AQI_Qualidade = AQI_Qualidade(AQI))
 
 
-save(air_quality_data, file="./data_raw/air_quality_data.rds", ".Rda")
-save(data_thermo_agg, file="./data_raw/air_quality_data_ugm3.rds", ".Rda")
+save(air_quality_data, file="./data_raw/air_quality_data.Rda")
+save(data_thermo_agg, file="./data_raw/air_quality_data_ugm3.Rda")
 
 #saveRDS(air_quality_data, file="./data_raw/air_quality_data.rds") #https://stackoverflow.com/questions/19967478/how-to-save-data-file-into-rdata
 #saveRDS(data_thermo_agg, file="./data_raw/air_quality_data_ugm3.rds")
