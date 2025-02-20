@@ -11,25 +11,18 @@
 #cat DESCRIPTION
 
 
-library(shiny)
-library(shinydashboard)
-library(shinythemes)
-library(shinycssloaders)
+
 library(jsonlite)
 library(DT)
 library(data.table)
-library(leaflet)
-library(leaflegend)
 library(Hmisc)
 library(corrplot)
 library(PerformanceAnalytics)
 library(ggplot2)
-library(RColorBrewer)
 library(data.table)
 library(tidyverse)
 library(devtools)
 library(openair)
-library(openairmaps)
 library(dplyr)
 library(zoo)
 library(httr)

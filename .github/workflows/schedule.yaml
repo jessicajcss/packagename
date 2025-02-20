@@ -24,32 +24,24 @@ jobs:
             any::tidyr
             any::readr
             any::knitr
-            any::shiny
-            any::shinydashboard
-            any::shinythemes
-            any::shinycssloaders
             any::jsonlite
             any::DT
             any::data.table
-            any::leaflet
-            any::leaflegend
             any::Hmisc
             any::corrplot
             any::PerformanceAnalytics
             any::ggplot2
-            any::RColorBrewer
             any::data.table
             any::tidyverse
             any::devtools
             any::openair
-            any::openairmaps
             any::dplyr
             any::zoo
             any::httr
 
       - name: Execute Script
         run: |
-          source("R/job.R")
+          Rscript "R/job.R"
 
       - name: Commit results
         run: |
