@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ## Preparing input thermo data - download from GitHub repository
 # Last update: 2024-02-18
 # https://aakashkh.github.io/r/2020/04/24/Download-Data-Github-Folder-COVID19.html
