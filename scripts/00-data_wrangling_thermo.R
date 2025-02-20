@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-#**** STEP BY STEP ****#
 #* DATA WRANGLING *#
 #* Local: R_Analysis/Post_Doc >> /script  ||  /data/data_input
 #* Date: 14/04/2024, Last update: 2025-02-18
