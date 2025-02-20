@@ -78,7 +78,7 @@ data_thermo_converted <- data_thermo %>%
          SO2 = SO2*2.62, #from ppb to ug/m³
          PM2.5 = PM2.5, # ug/m³
          PM10 = PM10) #from ppb to ug/m³
-=======
+
 ## Preparing input thermo data - download in situ
 # Last update: 2024-08-23
 
@@ -159,4 +159,3 @@ data_thermo_converted <- data_thermo %>%
          SO2 = SO2*2.62, #from ppb to ug/m³
          PM2.5 = PM2.5, # ug/m³
          PM10 = PM10) #from ppb to ug/m³
->>>>>>> ebbd7cbddd0f6f0fbe3323445a1bc700110fc507

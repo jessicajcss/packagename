@@ -238,7 +238,8 @@ aqiFromO3 <- function(gas) {
 
 source("./scripts/00-data_wrangling_thermo.R")
 
-
+load("./data_raw/dataaggfinal.Rda")
+load("./data_raw/air_quality_data_ugm3.Rda")
 #  --------------------------------------------------------------------------------------------------------
 #                                              AQI Determination
 #  --------------------------------------------------------------------------------------------------------
@@ -286,9 +287,7 @@ air_quality_data <- dataaggfinal %>%
   dplyr::mutate(AQI = pmax(AQI_SO2, AQI_NO2, AQI_O3, AQI_CO, AQI_PM25, AQI_PM10, na.rm = T),
          AQI_Qualidade = AQI_Qualidade(AQI))
 
-
 save(air_quality_data, file="./data_raw/air_quality_data.Rda")
-save(data_thermo_agg, file="./data_raw/air_quality_data_ugm3.Rda")
 
 #saveRDS(air_quality_data, file="./data_raw/air_quality_data.rds") #https://stackoverflow.com/questions/19967478/how-to-save-data-file-into-rdata
 #saveRDS(data_thermo_agg, file="./data_raw/air_quality_data_ugm3.rds")
