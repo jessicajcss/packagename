@@ -2,6 +2,15 @@
 # Last update: 2024-08-28
 # attention to tz; # local path to files
 
+
+#>>> locally run:
+#read.dcf("DESCRIPTION")
+#install.packages("remotes")
+#remotes::install_deps(dependencies = TRUE)
+#>>> and in Terminal
+#cat DESCRIPTION
+
+
 library(shiny)
 library(shinydashboard)
 library(shinythemes)
