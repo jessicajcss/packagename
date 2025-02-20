@@ -1,17 +1,8 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-#
-# See https://github.com/r-lib/actions/tree/master/examples#readme for
-# additional example workflows available for the R community.
-
 name: R
 
 on:
   schedule:
-   - cron: "0 * * * *"
-
+    - cron: "0 * * * *"
 
 jobs:
   generate-data:
@@ -38,7 +29,7 @@ jobs:
           r-version: ${{ matrix.config.r }}
           http-user-agent: ${{ matrix.config.http-user-agent }}
 
-      - uses: r-lib/actions/setup-pandoc@v2
+      - uses: r-lib/actions/setup-pandoc@main
 
       - name: Query dependencies
         run: |
@@ -49,22 +40,26 @@ jobs:
         shell: Rscript {0}
 
       - name: Cache R packages
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-2-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-2-
 
       - name: Install dependencies
         run: |
-          remotes::install_deps(dependencies = TRUE)
+          install.packages('remotes')
+          remotes::install_deps(dependencies = TRUE, upgrade = "always")
         shell: Rscript {0}
-          
+      
+      - name: List Files
+        run: ls -R
+      
       - name: Generate data
         run: |
           source("R/job.R")
         shell: Rscript {0} 
-        
+
       - name: Commit files
         run: |
           git config --local user.email "actions@github.com"
