@@ -10,15 +10,9 @@ name: R
 
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   schedule:
    - cron: "0 * * * *"
 
-permissions:
-  contents: read
 
 jobs:
   generate-data:
