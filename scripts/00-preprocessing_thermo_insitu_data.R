@@ -63,8 +63,8 @@ data_thermo <- data_thermo %>%
 
 
 # Saving
-saveRDS(data_thermo, "data/data_insitu_thermo.rds")
-
+#saveRDS(data_thermo, "data/data_insitu_thermo.rds")
+save(data_thermo, file="./data/data_insitu_thermo.Rda")
 
 
 #################### TO COMPARE WITH WHO, 2021 AQG
@@ -143,7 +143,8 @@ data_thermo <- data_thermo %>%
 
 
 # Saving
-saveRDS(data_thermo, "data/data_insitu_thermo.rds")
+#saveRDS(data_thermo, "data/data_insitu_thermo.rds")
+save(data_thermo, file="./data/data_insitu_thermo.Rda")
 
 
 

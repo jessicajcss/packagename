@@ -118,8 +118,11 @@ data_thermo <- rbind(data_thermo, data2)
 
 #>>> Saving updated thermo data
 
-saveRDS(data_thermo, "data/data_thermo.rds")
-saveRDS(file_path2, "data/file_path.rds")
+#saveRDS(data_thermo, "data/data_thermo.rds")
+#saveRDS(file_path2, "data/file_path.rds")
+
+save(data_thermo, file="./data/data_thermo.Rda")
+save(file_path2, file="./data/file_path.Rda")
 
 
 
@@ -254,10 +257,11 @@ data_thermo <- rbind(data_thermo, data2)
 
 #>>> Saving updated thermo data
 
-saveRDS(data_thermo, "data/data_thermo.rds")
-saveRDS(file_path2, "data/file_path.rds")
+#saveRDS(data_thermo, "data/data_thermo.rds")
+#saveRDS(file_path2, "data/file_path.rds")
 
-
+save(data_thermo, file="./data/data_thermo.Rda")
+save(file_path, file="./data/file_path.Rda")
 
 #################### TO COMPARE WITH WHO, 2021 AQG
 

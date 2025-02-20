@@ -452,4 +452,3 @@ data_thermo_agg <- dataaggfinal %>%
          PM2.5 = PM2.5, # ug/m³
          PM10 = PM10) #ug/m³
 
->>>>>>> ebbd7cbddd0f6f0fbe3323445a1bc700110fc507
