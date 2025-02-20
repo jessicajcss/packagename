@@ -1,9 +1,9 @@
 on:
   schedule:
-    - cron:  "@hourly"
+    - cron:   "*/15 * * * *"
   workflow_dispatch:
 
-name: 01-rscript
+name: job
 
 jobs:
   run-r-script:
