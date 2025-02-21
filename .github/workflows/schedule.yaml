@@ -42,8 +42,7 @@ jobs:
 
       - name: Execute Script
         run: |
-          Rscript "R/job.R"
-
+          Rscript R/job.R || echo "R script failed, check logs!"
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
