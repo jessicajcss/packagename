@@ -44,7 +44,7 @@ req <- httr::GET("https://api.github.com/repos/jessicajcss/Dados_GM_UFPR/git/tre
 file_path2 <- data.frame(path = unlist(lapply(content(req)$tree,
                                       function(x) x$path)))
 
-file_path2 <- data.frame(do.call(rbind, strsplit(file_path2$path, "/", fixed = TRUE))) %>%
+file_path2 <- data.frame(do.call(rbind, strsplit(as.character(file_path2$path), "/", fixed = TRUE))) %>%
   rename(
     folder = X1,
     filename = X2
