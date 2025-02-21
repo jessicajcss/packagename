@@ -39,9 +39,13 @@ jobs:
       - name: Run R script with debugging
         run: |
           Rscript -e '
-            debug(source);  # Enable debugging for source
-            source("R/job.R")
-          '
+            tryCatch({
+              print("Starting the script...");
+              source("R/job.R")
+            }, error = function(e) {
+              cat("Error: ", e$message, "\n")
+              traceback()
+            })
       - name: Next Step After Script
         run: |
           echo "This step runs regardless of the previous step's result"
