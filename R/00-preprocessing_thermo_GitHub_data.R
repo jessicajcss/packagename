@@ -50,13 +50,13 @@ file_path3 <- data.frame(do.call(rbind, strsplit(as.character(file_path2$path), 
  #   filename = X2
 #  )
 
-  file_path2 <- file_path3 %>%
+file_path2 <- file_path3 %>%
                 mutate(folder = file_path3$X1,
-                       filename = file_path3$X2)                                   
+                       filename = file_path3$X2)
 
 
 #Access files under a specific folder
-file_path2 <- file_path2[which(folder == 'GM-RioBranco' & str_detect(filename,'.lsi')),]
+file_path2 <- file_path2[which(file_path2$folder == 'GM-RioBranco' & str_detect(file_path2$filename,'.lsi')), c(3,4)]
 
 file_path2$filename <- sub(" ", "%20", file_path2$filename)
 
