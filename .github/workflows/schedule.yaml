@@ -26,9 +26,7 @@ jobs:
             any::knitr
             any::DT
             any::data.table
-            any::Hmisc
             any::ggplot2
-            any::data.table
             any::tidyverse
             any::devtools
             any::openair

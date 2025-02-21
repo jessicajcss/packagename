@@ -13,7 +13,6 @@
 
 
 library(DT)
-library(data.table)
 library(ggplot2)
 library(data.table)
 library(tidyverse)
@@ -45,5 +44,11 @@ conflicted::conflicts_prefer(dplyr::summarize)
 #                                              READING THE FILES
 #  --------------------------------------------------------------------------------------------------------
 
-source("./scripts/01-AQI_calculation_thermo_data.R")
+#source("./scripts/01-AQI_calculation_thermo_data.R")
 
+tryCatch({
+  # Your existing code here
+  source("./scripts/01-AQI_calculation_thermo_data.R")
+}, error = function(e) {
+  cat("Error: ", e$message, "\n")
+})
