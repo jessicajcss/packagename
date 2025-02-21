@@ -41,7 +41,7 @@ jobs:
         id: cache
         if: runner.os != 'Windows'
         with:
-          path: ${{ env.R_LIBS_USER }}
+          path: ${{ github.workspace }}/R/Rlibs
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
