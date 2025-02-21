@@ -8,8 +8,6 @@
 # usethis::use_github_action("check-standard") will install it.
 on:
 
-
-on:
   push:
     branches: [main, master]
   schedule:
