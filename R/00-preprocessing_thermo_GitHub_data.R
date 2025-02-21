@@ -43,12 +43,13 @@ req <- httr::GET("https://api.github.com/repos/jessicajcss/Dados_GM_UFPR/git/tre
 
 
 file_path2 <- data.frame(unlist(lapply(content(req)$tree,
-                                       function(x) x$path)))
+                                       function(x) x$path))) %>%
+  separate(., col = names(.)[1], into = c("folder", "filename"), sep = "/")
+#dplyr::rename_with(.cols = 1, ~"Path")
 
 
 #Access files under a specific folder
 file_path2 <- file_path2 %>%
-  separate(unlist.lapply.content.req..tree..function.x..x.path.., c('folder','filename'),'/') %>%
   filter(folder == 'GM-RioBranco') %>%
   filter(str_detect(filename,'.lsi'))
 
