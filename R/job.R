@@ -12,12 +12,8 @@
 
 
 
-library(jsonlite)
 library(DT)
 library(data.table)
-library(Hmisc)
-library(corrplot)
-library(PerformanceAnalytics)
 library(ggplot2)
 library(data.table)
 library(tidyverse)
@@ -37,11 +33,11 @@ library(usethis)
 #library(conflicted)
 
 #conflict_scout(
- # source("./scripts/01-AQI_calculation_thermo_data.R")
+ # source("R/job.R")
 #)
-#conflicts_prefer(dplyr::filter)
-#conflicts_prefer(lubridate::hour)
-#conflicted::conflicts_prefer(dplyr::summarize)
+conflicts_prefer(dplyr::filter)
+conflicts_prefer(lubridate::hour)
+conflicted::conflicts_prefer(dplyr::summarize)
 
 
 #  --------------------------------------------------------------------------------------------------------

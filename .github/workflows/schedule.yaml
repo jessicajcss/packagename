@@ -24,12 +24,9 @@ jobs:
             any::tidyr
             any::readr
             any::knitr
-            any::jsonlite
             any::DT
             any::data.table
             any::Hmisc
-            any::corrplot
-            any::PerformanceAnalytics
             any::ggplot2
             any::data.table
             any::tidyverse
@@ -43,6 +40,12 @@ jobs:
       - name: Execute Script
         run: |
           Rscript R/job.R || echo "R script failed, check logs!"
+        continue-on-error: true  # This ensures that the workflow continues even if this step fails
+
+      - name: Next Step After Script
+        run: |
+          echo "This step runs regardless of the previous step's result"
+
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
