@@ -22,20 +22,7 @@ myfiles <- lapply(temp.qualified,
                   col_select = c(1:21))
 
 # checking if all data frames have the same column names
-my_func <- function(x,y) {
-  for (i in names(x)) {
-    if (!(i %in% names(y))) {
-      print('Warning: Names are not the same')
-      break
-    }
-    else if(i==tail(names(y),n=1)) {
-      print('Names are identical')
-    }
-  }
-}
-
-my_func(myfiles[[1]], myfiles[[2]])
-
+### CODE IN THE  ORIGINAL SCRIPT
 
 # unificar planilhas de dados
 data_thermo <- do.call("rbind", myfiles)
