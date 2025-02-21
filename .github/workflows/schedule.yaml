@@ -40,20 +40,9 @@ jobs:
         # executes the RScript stored in the file
         # 01-monitoring-quarto-repos/script.R
         run: |
-          Rscript "R/00-preprocessing_thermo_GitHub_data.R"
+          Rscript "R/job.R"
         shell: Rscript {0}
 
-      - name: Execute Script 2
-        # executes the RScript stored in the file
-        # 01-monitoring-quarto-repos/script.R
-        run: |
-          Rscript "R/00-data_wrangling_thermo.R"
-
-      - name: Execute Script 3
-        # executes the RScript stored in the file
-        # 01-monitoring-quarto-repos/script.R
-        run: |
-          Rscript "R/01-AQI_calculation_thermo_data.R"
 
       - name: Commit results
         run: |
