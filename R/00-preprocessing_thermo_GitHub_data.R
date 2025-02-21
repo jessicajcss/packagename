@@ -59,8 +59,7 @@ file_path4 <- file_path3 %>%
 
 #Access files under a specific folder
 #file_path2 <- file_path4[which(file_path4$folder == 'GM-RioBranco' & str_detect(file_path4$filename,'.lsi')), c(3,4)]
-file_path2 <- file_path4[which(file_path4$folder == "GM-RioBranco" &
-                                 stringr::str_detect(file_path4$filename, ".lsi")),
+file_path2 <- file_path4[which(file_path4$folder == "GM-RioBranco" & stringr::str_detect(file_path4$filename, ".lsi")),
                          c("folder", "filename")]
 
 file_path2$filename <- sub(" ", "%20", file_path2$filename)
