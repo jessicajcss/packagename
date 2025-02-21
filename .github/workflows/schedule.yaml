@@ -39,7 +39,6 @@ jobs:
       - name: Execute Script
         run: |
           Rscript R/job.R || echo "R script failed, check logs!"
-        continue-on-error: true  # This ensures that the workflow continues even if this step fails
 
       - name: Next Step After Script
         run: |
