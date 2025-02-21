@@ -39,10 +39,17 @@ conflicts_prefer(dplyr::filter)
 conflicts_prefer(lubridate::hour)
 conflicted::conflicts_prefer(dplyr::summarize)
 
+#conflict_scout(
+ # source("./scripts/01-AQI_calculation_thermo_data.R")
+#)
+
+#tidyverse_conflicts(
+ # source("./scripts/00-preprocessing_thermo_GitHub_data.R")
+#)
 
 #  --------------------------------------------------------------------------------------------------------
 #                                              READING THE FILES
 #  --------------------------------------------------------------------------------------------------------
 
-#source("./scripts/01-AQI_calculation_thermo_data.R")
+source("./scripts/01-AQI_calculation_thermo_data.R")
 

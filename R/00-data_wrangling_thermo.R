@@ -39,7 +39,7 @@
 library(tidyverse)
 library(dplyr)
 
-#source("./scripts/00-preprocessing_thermo_GitHub_data.R")
+source("./scripts/00-preprocessing_thermo_GitHub_data.R")
 
 ### Dealing with outliers
 #### https://www.geeksforgeeks.org/how-to-remove-outliers-from-multiple-columns-in-r-dataframe/

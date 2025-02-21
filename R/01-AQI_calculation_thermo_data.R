@@ -236,7 +236,7 @@ aqiFromO3 <- function(gas) {
 #  --------------------------------------------------------------------------------------------------------
 
 
-#source("./scripts/00-data_wrangling_thermo.R")
+source("./scripts/00-data_wrangling_thermo.R")
 
 load("./data_raw/dataaggfinal.Rda")
 load("./data_raw/air_quality_data_ugm3.Rda")
