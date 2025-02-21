@@ -44,7 +44,8 @@ req <- httr::GET("https://api.github.com/repos/jessicajcss/Dados_GM_UFPR/git/tre
 
 file_path2 <- data.frame(unlist(lapply(content(req)$tree,
                                        function(x) x$path))) %>%
-  separate(., col = names(.)[1], into = c("folder", "filename"), sep = "/")
+  rename(path = 1) %>%
+  separate(path, into = c("folder", "filename"), sep = "/")
 #dplyr::rename_with(.cols = 1, ~"Path")
 
 
