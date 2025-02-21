@@ -36,6 +36,22 @@ jobs:
             any::conflicted
             any::stringr
 
+      - name: Cache R packages
+        uses: actions/cache@v3
+        id: cache
+        if: runner.os != 'Windows'
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          remotes::install_deps(dependencies = TRUE)
+        shell: Rscript {0}
+
+
 
       - name: Execute Script 1
         # executes the RScript stored in the file

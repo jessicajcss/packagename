@@ -80,8 +80,8 @@ i <- 1
 out2 <- vector("list", nrow(file_path)) # vetor com o correspondente numero de variaveis meteorologicas
 
 for (i in seq(i, nrow(file_path))){
-  file_path$filename[i] <- sub(" ", "%20", file_path$filename[i])
-  file_path <- file_path %>% tail(288) # a cada 24 [24*60/5]
+  #file_path$filename[i] <- sub(" ", "%20", file_path$filename[i])
+  #file_path <- file_path %>% tail(288) # a cada 24 [24*60/5]
   path <- paste0("https://raw.githubusercontent.com/jessicajcss/Dados_GM_UFPR/refs/heads/main/GM-RioBranco/", file_path$filename[i])
   #daily_data = readr::read_csv(content(GET(path)))
   response <- httr::GET(path,
