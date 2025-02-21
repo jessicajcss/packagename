@@ -44,8 +44,7 @@ req <- httr::GET("https://api.github.com/repos/jessicajcss/Dados_GM_UFPR/git/tre
 
 file_path2 <- data.frame(unlist(lapply(content(req)$tree,
                                        function(x) x$path)))%>%
-  rename_with(.cols = 1, ~"Path")
-#colnames(file_path2) = c('Path')
+  dplyr::rename_with(.cols = 1, ~"Path")
 
 
 #Access files under a specific folder
