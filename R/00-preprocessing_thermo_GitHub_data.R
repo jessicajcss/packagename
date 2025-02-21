@@ -50,8 +50,9 @@ file_path2 <- data.frame(do.call(rbind, strsplit(as.character(file_path2$path), 
  #   filename = X2
 #  )
 
-  file_path2$folder <- file_path2$X1
-  file_path2$filename <- file_path2$X2                                      
+  file_path2 <- file_path2 %>%
+                mutate(folder = X1,
+                       filename = X2)                                   
 
 
 #Access files under a specific folder
