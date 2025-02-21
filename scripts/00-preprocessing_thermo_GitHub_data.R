@@ -98,7 +98,7 @@ data2 <- output %>%
            into = c("id", "date", "no2", "x4",
                     "o3", "x6", "so2", "x8",
                     "rh", "x10", "co", "x12",
-                    "pm2p5", "x14", "pm10", "x16"),
+                    "pm2p5", "x14", "pm10", "x16", "x17"),
            sep = ",") %>%
   select(date, so2, no2, o3, so2, rh, co, pm2p5, pm10) %>%
   mutate(date = as.POSIXct(date, format = "%m/%d/%Y %I:%M:%S %p", tz = 'America/Sao_Paulo')) %>% #https://www.kaggle.com/discussions/questions-and-answers/382740
