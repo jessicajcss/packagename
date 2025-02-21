@@ -282,10 +282,11 @@ air_quality_data <- dataaggfinal %>%
          AQI_CO = aqiFromCO(CO),
          AQI_PM25 = aqiFromPM25(PM2.5),
          AQI_PM10 = aqiFromPM10(PM10))  %>%
-  replace(.< 0, NA) %>%
+  mutate_all(~ ifelse(. < 0, NA, .)) %>%
   #mutate_if(function(x) all(x < 0), function(x) NA)  %>%
   dplyr::mutate(AQI = pmax(AQI_SO2, AQI_NO2, AQI_O3, AQI_CO, AQI_PM25, AQI_PM10, na.rm = T),
          AQI_Qualidade = AQI_Qualidade(AQI))
+
 
 save(air_quality_data, file="./data_raw/air_quality_data.Rda")
 

@@ -139,6 +139,7 @@ dataagg <- data_thermo %>%
 
 
 
+
 # Now fill up missing datetimes with NA
 a <- seq(min(dataagg$date, na.rm = T),
          max(dataagg$date, na.rm = T), by=paste(h,"hours"))
@@ -230,3 +231,4 @@ data_thermo_agg <- dataaggfinal %>%
 
 air_quality_data_ugm3 <- data_thermo_agg
 save(air_quality_data_ugm3, file="./data_raw/air_quality_data_ugm3.Rda")
+

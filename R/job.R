@@ -41,9 +41,7 @@ library(usethis)
 #)
 #conflicts_prefer(dplyr::filter)
 #conflicts_prefer(lubridate::hour)
-
-#source("R/job.R")
-
+#conflicted::conflicts_prefer(dplyr::summarize)
 
 
 #  --------------------------------------------------------------------------------------------------------
