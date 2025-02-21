@@ -38,14 +38,8 @@ jobs:
 
       - name: Run R script with debugging
         run: |
-          Rscript -e '
-            tryCatch({
-              print("Starting the script...");
-              source("R/job.R")
-            }, error = function(e) {
-              cat("Error: ", e$message, "\n")
-              traceback()
-            })
+          cat /home/runner/work/_temp/131fa0dd-2834-4fba-b6af-70b4957f62d7.sh
+
       - name: Next Step After Script
         run: |
           echo "This step runs regardless of the previous step's result"
