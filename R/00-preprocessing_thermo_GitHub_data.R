@@ -53,9 +53,9 @@ library(stringr)
 file_path2 <- file_path2 %>%
   #separate(path, into = c("folder", "filename"), sep = "/") %>%
   mutate(
-    folder = str_extract(.[[1]], "^[^/]+"),  # Pega tudo antes da primeira "/"
-    filename = str_extract(.[[1]], "[^/]+$") # Pega tudo depois da última "/"
-  ) %>%
+    folder = sub("/.*", "", .[[1]]),  # Pega tudo antes da primeira "/"
+    filename = sub("^.*/", "", .[[1]]) # Pega tudo depois da última "/"
+  )  %>%
   filter(folder == 'GM-RioBranco') %>%
   filter(str_detect(filename,'.lsi')) %>%
   select(-path)
