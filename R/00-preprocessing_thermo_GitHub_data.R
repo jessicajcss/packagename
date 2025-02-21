@@ -47,13 +47,18 @@ file_path2 <- data.frame(path = unlist(lapply(content(req)$tree,
   #separate(path, into = c("folder", "filename"), sep = "/")
 #dplyr::rename_with(.cols = 1, ~"Path")
 
-
+library(stringr)
 
 #Access files under a specific folder
 file_path2 <- file_path2 %>%
-  separate(path, into = c("folder", "filename"), sep = "/") %>%
+  #separate(path, into = c("folder", "filename"), sep = "/") %>%
+  mutate(
+    folder = str_extract(.[[1]], "^[^/]+"),  # Pega tudo antes da primeira "/"
+    filename = str_extract(.[[1]], "[^/]+$") # Pega tudo depois da última "/"
+  ) %>%
   filter(folder == 'GM-RioBranco') %>%
-  filter(str_detect(filename,'.lsi'))
+  filter(str_detect(filename,'.lsi')) %>%
+  select(-path)
 
 file_path2$filename <- sub(" ", "%20", file_path2$filename)
 
