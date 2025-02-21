@@ -44,19 +44,19 @@ req <- httr::GET("https://api.github.com/repos/jessicajcss/Dados_GM_UFPR/git/tre
 file_path2 <- data.frame(path = unlist(lapply(content(req)$tree,
                                       function(x) x$path)))
 
-file_path2 <- data.frame(do.call(rbind, strsplit(as.character(file_path2$path), "/", fixed = TRUE))) #%>%
+file_path3 <- data.frame(do.call(rbind, strsplit(as.character(file_path2$path), "/", fixed = TRUE))) #%>%
 #  rename(
    # folder = X1,
  #   filename = X2
 #  )
 
-  file_path2 <- file_path2 %>%
-                mutate(folder = X1,
-                       filename = X2)                                   
+  file_path2 <- file_path3 %>%
+                mutate(folder = file_path3$X1,
+                       filename = file_path3$X2)                                   
 
 
 #Access files under a specific folder
-file_path2 <- file_path2[which(folder == 'GM-RioBranco' & str_detect(filename,'.lsi'),)]
+file_path2 <- file_path2[which(folder == 'GM-RioBranco' & str_detect(filename,'.lsi')),]
 
 file_path2$filename <- sub(" ", "%20", file_path2$filename)
 
