@@ -36,10 +36,12 @@ jobs:
             any::usethis
             any::conflicted
 
-      - name: Execute Script
+      - name: Run R script with debugging
         run: |
-          Rscript R/job.R || echo "R script failed, check logs!"
-
+          Rscript -e '
+            debug(source);  # Enable debugging for source
+            source("R/job.R")
+          '
       - name: Next Step After Script
         run: |
           echo "This step runs regardless of the previous step's result"
