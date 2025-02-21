@@ -56,8 +56,8 @@ file_path2 <- data.frame(do.call(rbind, strsplit(as.character(file_path2$path), 
 
 #Access files under a specific folder
 file_path2 <- file_path2 %>%
-  filter(folder == 'GM-RioBranco') %>%
-  filter(str_detect(filename,'.lsi')) %>%
+  subset(folder == 'GM-RioBranco') %>%
+  subset(str_detect(filename,'.lsi')) %>%
   select(folder, filename)
 
 file_path2$filename <- sub(" ", "%20", file_path2$filename)
