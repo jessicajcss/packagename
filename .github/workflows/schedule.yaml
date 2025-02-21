@@ -36,6 +36,7 @@ jobs:
             any::zoo
             any::httr
             any::usethis
+            any::conflicted
 
       - name: Execute Script
         run: |
