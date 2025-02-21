@@ -8,10 +8,6 @@
 #>>>> RODAR O 'INSITU' APENAS E SEMPRE QUE TIVER NOVOS DADOS INSITU ----
 #>>>> [2024-02-18] RODAR O 'LOOPZERO' APENAS INICIALMENTE PARA NÃO SOBRECARREGAR
 
-library(conflicted)
-conflicts_prefer(dplyr::filter)
-conflicts_prefer(lubridate::hour)
-conflicted::conflicts_prefer(dplyr::summarize)
 
 
 #--------------- LOOP UPDATE --------------- #

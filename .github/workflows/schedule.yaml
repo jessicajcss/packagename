@@ -36,22 +36,24 @@ jobs:
             any::usethis
             any::conflicted
 
-      - name: Run R script with debugging
+
+      - name: Execute Script 1
+        # executes the RScript stored in the file
+        # 01-monitoring-quarto-repos/script.R
         run: |
-          echo "Starting the R script..."
+          Rscript "R/00-preprocessing_thermo_GitHub_data.R"
 
-          # Run the R script
-          Rscript R/job.R
+      - name: Execute Script 2
+        # executes the RScript stored in the file
+        # 01-monitoring-quarto-repos/script.R
+        run: |
+          Rscript "R/00-data_wrangling_thermo.R"
 
-          # Print session info to verify environment and dependencies
-          echo "Session Information:"
-          Rscript -e 'sessionInfo()'
-
-          # Optionally, you can also print the working directory and list files to confirm paths
-          echo "Working directory:"
-          pwd
-          echo "Files in the directory:"
-          ls -l
+      - name: Execute Script 3
+        # executes the RScript stored in the file
+        # 01-monitoring-quarto-repos/script.R
+        run: |
+          Rscript "R/01-AQI_calculation_thermo_data.R"
 
       - name: Commit results
         run: |

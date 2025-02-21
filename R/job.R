@@ -44,5 +44,5 @@ conflicted::conflicts_prefer(dplyr::summarize)
 #                                              READING THE FILES
 #  --------------------------------------------------------------------------------------------------------
 
-source("./scripts/01-AQI_calculation_thermo_data.R")
+#source("./scripts/01-AQI_calculation_thermo_data.R")
 

@@ -40,10 +40,6 @@ library(tidyverse)
 library(dplyr)
 
 #source("./scripts/00-preprocessing_thermo_GitHub_data.R")
-library(conflicted)
-conflicts_prefer(dplyr::filter)
-conflicts_prefer(lubridate::hour)
-conflicted::conflicts_prefer(dplyr::summarize)
 
 ### Dealing with outliers
 #### https://www.geeksforgeeks.org/how-to-remove-outliers-from-multiple-columns-in-r-dataframe/

@@ -235,10 +235,6 @@ aqiFromO3 <- function(gas) {
 #                                              READING THE FILES
 #  --------------------------------------------------------------------------------------------------------
 
-library(conflicted)
-conflicts_prefer(dplyr::filter)
-conflicts_prefer(lubridate::hour)
-conflicted::conflicts_prefer(dplyr::summarize)
 
 #source("./scripts/00-data_wrangling_thermo.R")
 
