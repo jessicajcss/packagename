@@ -43,22 +43,19 @@ req <- httr::GET("https://api.github.com/repos/jessicajcss/Dados_GM_UFPR/git/tre
 
 file_path2 <- data.frame(path = unlist(lapply(content(req)$tree,
                                       function(x) x$path)))
-  #rename(path = 1) %>%
-  #separate(path, into = c("folder", "filename"), sep = "/")
-#dplyr::rename_with(.cols = 1, ~"Path")
 
-library(stringr)
+file_path2 <- data.frame(do.call(rbind, strsplit(file_path2$path, "/", fixed = TRUE))) %>%
+  rename(
+    folder = X1,
+    filename = X2
+  )
+
+
 
 #Access files under a specific folder
 file_path2 <- file_path2 %>%
-  #separate(path, into = c("folder", "filename"), sep = "/") %>%
-  mutate(
-    folder = sub("/.*", "", .[[1]]),  # Pega tudo antes da primeira "/"
-    filename = sub("^.*/", "", .[[1]]) # Pega tudo depois da última "/"
-  )  %>%
   filter(folder == 'GM-RioBranco') %>%
-  filter(str_detect(filename,'.lsi')) %>%
-  select(-path)
+  filter(str_detect(filename,'.lsi'))
 
 file_path2$filename <- sub(" ", "%20", file_path2$filename)
 
