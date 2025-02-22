@@ -20,7 +20,7 @@ Imports:
     openair,
     dplyr,
     zoo,
-    httr.
+    httr,
     base,
     conflicted,
     stringr
